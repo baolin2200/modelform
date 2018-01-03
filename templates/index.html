@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>欢迎登陆：{{ request.session.user_info_key.username }}</h1>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block css %}
+    <style>
+        .pager a{
+            display: inline-block;
+            padding: 3px 5px;
+            margin: 0 3px;
+            border: 1px solid #dddddd;
+        }
+        .pager a.active{
+            background-color: cadetblue;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="/add_host/" class="btn btn-info">添加</a>
+    </div>
+    <table class="table table-hover" >
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>主机名</th>
+                <th>IP</th>
+                <th>端口</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for host in host_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ host.hostname }}</td>
+                <td>{{ host.ip }}</td>
+                <td>{{ host.port }}</td>
+                <td>
+                    <a href="/edit_host/{{ host.id }}/"><button class="btn btn-info">编辑</button></a>
+                    <a href="/del/{{ host.id }}"><button class="btn btn-danger">删除</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pager">
+       <ul class="pagination" id="pager">
+            {{ page_html }}
+       </ul>
+    </div>
+
+
+
+
+{% endblock %}

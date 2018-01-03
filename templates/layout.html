@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js "></script>
+    <script src="/static/dist/js/bootstrap.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .pg-header {
+            height: 48px;
+            background-color: #1b6d85;
+        }
+    </style>
+    {% block css %}
+
+    {% endblock %}
+</head>
+<body>
+
+<div class="pg-header">菜单</div>
+{% block body %}{% endblock %}
+
+
+<script></script>
+{% block js %}{% endblock %}
+</body>
+</html>
