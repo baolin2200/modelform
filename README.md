@@ -11,8 +11,8 @@
 ```python
 from django.forms import ModelForm
 ```
-###以下为定义个别文档
-#### 定义 forms.py
+###以下为定义个别文档    
+#### 定义 forms.py    
 ```python     
 from django.forms import Form
 # widgets 表示插件 由于和 ModelForm 得 widgets 相冲突所以 as 重命名
@@ -99,8 +99,9 @@ class HostModelForm(ModelForm):
         return hostname
 ```    
 
-####models表结构
-```python
+####models表结构     
+
+```python     
 from django.db import models
 
 # Create your models here.
@@ -139,10 +140,11 @@ class Host(models.Model):
 
     # 多对多 主机表 和 部门表
     dp = models.ManyToManyField(to="Departement")
-```
+```    
 
-####定义views.py文件
-```python
+####定义views.py文件    
+
+```python    
 from django.shortcuts import render, redirect, HttpResponse
 
 # Create your views here.
@@ -250,4 +252,4 @@ def edit_host(request, nid):
             form.save()
             return redirect("/host/")
         return render(request, "edit_host.html", {"form": form})
-```
+```     
