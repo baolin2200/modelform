@@ -6,13 +6,14 @@
 <b>ModelForm案例：GitHub地址</b>       
 <a href="https://github.com/baolin2200/modelform" target="_blank" style="color: red">https://github.com/baolin2200/modelform</a>
 <hr>
-<b>依赖模块：</b>
+
+<b>依赖模块：</b>    
 ```python
 from django.forms import ModelForm
 ```
 ###以下为定义个别文档
 #### 定义 forms.py
-```python
+```python     
 from django.forms import Form
 # widgets 表示插件 由于和 ModelForm 得 widgets 相冲突所以 as 重命名
 from django.forms import widgets as widgets_bash
@@ -96,7 +97,7 @@ class HostModelForm(ModelForm):
             # 抛出 错误异常
             raise ValidationError('主机名已存在')
         return hostname
-```
+```    
 
 ####models表结构
 ```python
